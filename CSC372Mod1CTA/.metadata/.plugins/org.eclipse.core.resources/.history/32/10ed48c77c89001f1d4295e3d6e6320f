@@ -1,0 +1,49 @@
+package mod1CTAAssigment;
+
+public class BankAccount {    //superclass
+	protected String firstName;
+	protected String lastName;
+	protected int accountID;
+	protected double balance;
+	
+	public BankAccount(){
+		balance = 0;
+	}
+	
+	public void deposit(double dollarAmount) {
+		this.balance =+ dollarAmount;
+	}
+	public void withdrawal(double dollarAmount) {
+		this.balance =- dollarAmount;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public void setAccountID(int accountID) {
+		this.accountID = accountID;
+	}
+	public String getFirstName() {
+		return this.firstName;
+	}
+	public String getLastName() {
+		return this.lastName;
+	}
+	public int getAccountID() {
+		return this.accountID;
+	}
+	public double getBalance() {
+		return this.balance;
+	}
+	public void accountSummary() {
+		System.out.println("First Name: " + this.firstName);
+		System.out.println("Last Name: " + this.lastName);
+		System.out.println("Account ID: " + this.accountID);
+		System.out.println("Balance: " + this.balance);
+	}
+	
+	
+	
+}

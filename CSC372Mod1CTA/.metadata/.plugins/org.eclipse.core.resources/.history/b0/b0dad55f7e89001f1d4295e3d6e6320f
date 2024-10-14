@@ -1,0 +1,10 @@
+package mod1CTAAssigment;
+
+public class Main {
+
+	public static void main(String[] args) {
+		CheckingAccount bankAccount = new CheckingAccount();
+
+	}
+
+}

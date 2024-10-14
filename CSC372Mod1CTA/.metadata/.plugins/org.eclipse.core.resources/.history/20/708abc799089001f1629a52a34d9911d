@@ -1,0 +1,27 @@
+package mod1CTAAssigment;
+
+public class CheckingAccount extends BankAccount {   //subclass that inherits from BankAccount.Java
+	double interestRate = 0.02; //interest rate attribute to 2%
+	int overDraftFee = 30;  //overdraft fee of the checking account if a withdraw occurs
+	
+	public CheckingAccount() {  //default constructor that creates a checking account
+		
+	}
+	
+	public void processWithDrawal() {
+		this.balance =- this.overDraftFee;
+		System.out.println("Current balance: " + this.balance);    //method that processes a withdrawal
+		System.out.println("Note: Fee has been accessed");
+	}
+	public void displayAccount() {
+		System.out.println("First Name: " + this.firstName);
+		System.out.println("Last Name: " + this.lastName);        //method that displays account information
+		System.out.println("Account ID: " + this.accountID);
+		System.out.println("Balance: " + this.balance);
+	}
+
+
+
+
+}
+

@@ -1,0 +1,43 @@
+package mod1CTAAssigment;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		BankAccount generalBankAccount = new BankAccount();
+		CheckingAccount checkingAccount = new CheckingAccount();
+		
+		System.out.println("Set first name for a general bank account: ");
+		String userInputFirstName = scnr.nextLine();
+		
+		generalBankAccount.setFirstName(userInputFirstName);
+		
+		System.out.println("Set last name for a general bank account: ");
+		String userInputLastName = scnr.nextLine();
+		
+		generalBankAccount.setLastName(userInputLastName);
+		
+		System.out.println("Set account Id for a general bank account: ");
+		int userInputAccountID = scnr.nextInt();
+		
+		generalBankAccount.setAccountID(userInputAccountID);
+		
+		System.out.println("Enter a deposit for your new general bank account: ");
+		double userInputBalance = scnr.nextDouble();
+		
+		generalBankAccount.deposit(userInputBalance);
+		
+		System.out.println("Would you like to see a general bank account summary?: ");
+		String userInputChoice = scnr.nextLine();
+		
+		if(userInputChoice.equalsIgnoreCase("yes")) {
+			generalBankAccount.accountSummary();
+		}
+		
+		
+		
+	
+		scnr.close();
+	}
+
+}

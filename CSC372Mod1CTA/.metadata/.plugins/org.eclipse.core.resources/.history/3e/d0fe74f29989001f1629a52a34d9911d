@@ -1,0 +1,75 @@
+package mod1CTAAssigment;
+
+import java.util.Scanner;
+
+public class BankAccount {    //superclass
+	protected String firstName;
+	protected String lastName;
+	protected int accountID;                   //attributes of the bank account
+	protected double balance;
+	
+	public BankAccount(){
+		balance = 0;             //default constructor that sets balance to 0
+	}
+	
+	public void deposit(double dollarAmount) {
+		this.balance =+ dollarAmount;
+	}
+	
+	
+	public void withdrawal(Scanner scnr, double dollarAmount) {
+		if(this.balance <= 0) {
+			System.out.println("insufficent funds for withdraw");
+			System.out.println("would you like to overdraft for the withdrawal?(A $30 overdraft fee will be applied to your balance: ");
+			String userInputWithdrawal = scnr.nextLine();
+			
+			if(userInputWithdrawal.equalsIgnoreCase("yes")) {
+				this.balance =- dollarAmount;
+				this.balance =- 30;
+			}else {
+				System.out.println("A overdraft will not be applied to your balance");
+			}
+		}else if(this.balance > 0) {
+			this.balance =- dollarAmount;
+			
+		}
+		
+	
+	}
+	
+	
+	
+	public void setFirstName(String firstName) {       // block of setters for bank account attributes
+		this.firstName = firstName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public void setAccountID(int accountID) {
+		this.accountID = accountID;
+	}
+	
+	
+	public String getFirstName() {
+		return this.firstName;
+	}
+	public String getLastName() {
+		return this.lastName;
+	}                                         // block of getters for bank account attributes
+	public int getAccountID() {
+		return this.accountID;
+	}
+	public double getBalance() {
+		return this.balance;
+	}
+	
+	public void accountSummary() {
+		System.out.println("First Name: " + this.firstName);
+		System.out.println("Last Name: " + this.lastName);              //method that prints all bank account information
+		System.out.println("Account ID: " + this.accountID);
+		System.out.println("Balance: " + this.balance);
+	}
+	
+	
+	
+}

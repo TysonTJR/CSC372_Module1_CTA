@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/home/tysonjerico123/CSC372Mod1CTA/.metadata/.plugins/org.eclipse.jdt.core
+369775674.index
+1865797976.index
+2937471429.index
