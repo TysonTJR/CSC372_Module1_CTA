@@ -18,26 +18,30 @@ public class Main {
 		
 			System.out.println("Set last name for a general bank account: ");
 			String userInputLastName = scnr.nextLine();
-			generalBankAccount.setLastName(userInputLastName);      //sets last name of the account to the userinput
+			generalBankAccount.setLastName(userInputLastName);      //sets last name of the account to the user input
 		
 		
 			boolean loopChoice = true;          // conditional boolean variable for the account ID loop
 			accountIDLoop: while(loopChoice) {   //while variable is true executes
 		
-								System.out.println("Set account Id for a general bank account(Enter 8 digits: ");
+								System.out.println("Set account Id for a general bank account(Enter 8 digits:) ");
 								int userInputAccountID = scnr.nextInt();
-								String userInputAccountIDConvert = Integer.toString(userInputAccountID);   //converts user int to a string
-		
-								if(userInputAccountIDConvert.matches("\\d{8}")){         //checks to make sure the acccount ID is 8 digits
-									generalBankAccount.setAccountID(userInputAccountID);
-									loopChoice = false;
-									break;
 								
-								}else {                                             //if account Id is not 8 digits it continues the loop
-									System.out.println("Please enter 8 digits");
-									continue accountIDLoop;
-								}
+								if(userInputAccountID > 0) {
+									String userInputAccountIDConvert = Integer.toString(userInputAccountID);   //converts user int to a string
 		
+									if(userInputAccountIDConvert.matches("\\d{8}")){         //checks to make sure the acccount ID is 8 digits
+										generalBankAccount.setAccountID(userInputAccountID);
+										loopChoice = false;
+										break;
+								
+									}else {                                             //if account Id is not 8 digits it continues the loop
+										System.out.println("(Please enter 8 digits)");
+										continue accountIDLoop;
+									}
+								}else if(userInputAccountID <= 0) {
+									System.out.println("(ERROR. Please enter only positive integers)");
+								}
 							}
 		
 		System.out.println("Enter a deposit for your new general bank account: ");          //prompts the user to enter a deposit
